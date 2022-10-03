@@ -11,30 +11,29 @@ import { Box, Container, Paper } from '@mui/material';
 
 export default function Footer() {
   return (
-    <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>  
+    <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
       <BottomNavigation>
-      <BottomNavigationAction
-        href='https://www.facebook.com'
-        label="Recents"
-        value="recents"
-        icon={<Facebook />}
-      />
-      <BottomNavigationAction
-        label="Favorites"
-        value="favorites"
-        icon={<Instagram />}
-      />
-      <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<Twitter />}
-      />
-            <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<GitHub />}
-      />
-    </BottomNavigation>
+        <BottomNavigationAction
+          href='https://github.com/datacrump'
+          label="GitHub"
+          icon={<GitHub />}
+        />
+        <BottomNavigationAction
+          href='https://twitter.com/datacrump'
+          label="Twitter"
+          icon={<Twitter />}
+        />        
+        <BottomNavigationAction
+          href='https://www.facebook.com/datacrump'
+          label="Facebook"
+          icon={<Facebook />}
+        />
+        <BottomNavigationAction
+          href='https://www.instagram.com/datacrump/'
+          label="Instagram"
+          icon={<Instagram />}
+        />
+      </BottomNavigation>
     </Paper>
   );
 }

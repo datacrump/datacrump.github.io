@@ -7,7 +7,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '../config/createEmotionCache';
 import * as React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { red } from '@mui/material/colors';
+import { red, blue, green } from '@mui/material/colors';
 
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -26,13 +26,13 @@ export default function MyApp(props: MyAppProps) {
     () =>
       createTheme({
         palette: {
-          // mode: prefersDarkMode ? 'light' : 'light',
-          mode: prefersDarkMode ? 'dark' : 'light',
+          mode: prefersDarkMode ? 'light' : 'light',
+          // mode: prefersDarkMode ? 'dark' : 'light',
           primary: {
-            main: '#212121',
+            main: blue[900],
           },
           secondary: {
-             main: '#1b5e20',
+             main: green[900],
           },
           error: {
           main: red.A400,

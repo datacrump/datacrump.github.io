@@ -1,5 +1,6 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material"
 import { Post } from "../../interfaces/post"
+import ShareMenu from "../share"
 
 
 type Props = {
@@ -25,7 +26,7 @@ export default function PostCard({ post, prev_post }: Props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+        <ShareMenu title={post.title} description={post.excerpt} image={post.coverImage} uri={post.fullPath}></ShareMenu>
         <Button size="small" href={post.fullPath}>Read More</Button>
       </CardActions>
     </Card>

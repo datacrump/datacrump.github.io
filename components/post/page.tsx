@@ -10,6 +10,7 @@ type Props = {
 
 export default function PostPage({ post, prev_post, next_post }: Props) {
   return (
+    <>
     <Grid container padding={3}>
       <Container>
         <h1>{post.title}</h1>
@@ -18,6 +19,7 @@ export default function PostPage({ post, prev_post, next_post }: Props) {
           <Grid item xs={12} lg={8}>
           <Paper elevation={3}>
           <Container>
+            <img src={post.coverImage} />
             <div>{post.excerpt}</div>
             <div dangerouslySetInnerHTML={{ __html: post.content }}/>
           </Container>
@@ -34,6 +36,7 @@ export default function PostPage({ post, prev_post, next_post }: Props) {
         </Grid>
         </Container>
         </Grid>
+        </>
   )
 }
 

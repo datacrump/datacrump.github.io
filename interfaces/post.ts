@@ -5,7 +5,6 @@ export interface Post {
   excerpt: string;
   coverImage: string;
   date: string;
-  ogImage: string;
   path: string;
   content: string;
   top: boolean;

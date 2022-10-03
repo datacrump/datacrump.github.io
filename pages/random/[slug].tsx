@@ -35,7 +35,7 @@ export default function RandomPost({ post, category, morePosts, preview }: Props
         <title>
           {post.title} | DataCrump
         </title>
-        <meta property="og:image" content={post.ogImage} />
+        <meta property="og:image" content={post.coverImage} />
       </Head>
       <Container>
       <Crumbs post={post} category={category}/>

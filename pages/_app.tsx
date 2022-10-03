@@ -26,8 +26,8 @@ export default function MyApp(props: MyAppProps) {
     () =>
       createTheme({
         palette: {
-          mode: prefersDarkMode ? 'light' : 'light',
-          // mode: prefersDarkMode ? 'dark' : 'light',
+          // mode: prefersDarkMode ? 'light' : 'light',
+          mode: prefersDarkMode ? 'dark' : 'light',
           primary: {
             main: blue[900],
           },

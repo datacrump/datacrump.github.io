@@ -3,7 +3,7 @@
 // import HeroPost from '../components/hero-post'
 // import Intro from '../components/intro'
 // import Layout from '../components/layout'
-import { getTopPosts } from '../lib/api'
+import { getCategoryPosts, getTopPosts } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { Post, Category} from '../interfaces/post'
@@ -12,35 +12,25 @@ import Layout from '../components/layout'
 import { styled } from '@mui/material/styles';
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Divider, Grid, Paper, Typography } from '@mui/material'
 import PostCard from '../components/post/card'
+import { randomFillSync } from 'crypto'
 
 
 type Props = {
-  topPosts: Post[]
+  random: Post[]
+  top: Post[]
 }
 
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
-
-
-export default function Index({ topPosts }: Props) {
-  const heroPost = topPosts[0]
-  const morePosts = topPosts.slice(1)
-
+export default function Index({ random, top }: Props) {
+  
   let random_posts = [];
 
-  for (let i=0; i<4; i++) {
+  random.forEach(post => {
     random_posts.push(
       <Grid item>
-      <PostCard post={heroPost} prev_post={heroPost} />
-        </Grid>
+        <PostCard post={post} prev_post={post} />
+      </Grid>
     )
-  }
-  
+  })
   
 
   return (
@@ -76,8 +66,14 @@ export default function Index({ topPosts }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const topPosts = getTopPosts();
+  const random = getCategoryPosts('random');
+  random.slice(0, 3)
+  const top = getTopPosts();
+
   return {
-    props: { topPosts },
+    props: { 
+      random: random,
+      top: top
+     },
   }
 }

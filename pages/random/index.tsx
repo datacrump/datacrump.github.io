@@ -24,17 +24,14 @@ export default function RandomPost({ posts, category }: Props) {
   }
 
   let random_posts = [];
-  const post = posts[0]
-  for (let i=0; i<4; i++) {
+  posts.forEach(post => {
     random_posts.push(
       <Grid item>
       <PostCard post={post} prev_post={post} />
         </Grid>
     )
-  }
+  })
   
-  
-
   return (
     <>
       <Layout>

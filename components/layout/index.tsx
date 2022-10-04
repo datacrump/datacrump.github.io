@@ -6,6 +6,7 @@ import Footer from "./footer"
 import Meta from "./meta"
 import CookieConsent from "react-cookie-consent";
 import { Link } from "@mui/material";
+import Header from "../header";
 
 
 type Props = {
@@ -16,11 +17,12 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
   return (
     <>
-      <Meta />
-      <div className="min-h-screen">
+      {/* <Meta /> */}
+      {/* <div className="min-h-screen"> */}
         {/* <Alert preview={preview} /> */}
+      <Header />
         <main>{children}</main>
-      </div>
+      {/* </div> */}
       <Footer />
     </>
   )

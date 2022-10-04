@@ -5,7 +5,7 @@ import ErrorPage from 'next/error'
 import Header from '../../components/header'
 // import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-import { getCategory, getCategoryPosts, getPostBySlug} from '../../lib/api'
+import { getCategory, getCategoryPosts, getPostBySlug } from '../../lib/api'
 // import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 // import { CMS_NAME } from '../../lib/constants'
@@ -30,19 +30,17 @@ export default function RandomPost({ post, category, morePosts, preview }: Props
   }
   return (
     <Layout>
-    <Header/>
-    <Head>
-        <title>
-          {post.title} | DataCrump
-        </title>
-        <meta property="og:image" content={post.coverImage} />
-      </Head>
+      <Head>
+          <title>{`${post.title} | Data Crump`}</title>
+          <meta name="description" content={post.excerpt} />
+          {(category.coverImage)?<meta name="og:Image" content={post.coverImage} />: <></>}
+        </Head>
       <Container>
-      <Crumbs post={post} category={category}/>
+        <Crumbs post={post} category={category} />
       </Container>
-      
+
       <PostPage post={post} prev_post={post} next_post={post} />
-      </Layout>
+    </Layout>
   )
 }
 
@@ -71,7 +69,7 @@ export async function getStaticProps({ params }: Params) {
 
 export async function getStaticPaths() {
   const posts = getCategoryPosts('random')
-  
+
   return {
     paths: posts.map((post) => {
       return {

@@ -13,9 +13,9 @@ export default function Index() {
     return (
         <>
             <Layout>
-                <Header />
                 <Head>
                     <title>Data Crump</title>
+                    <meta name="description" content="Standart policy" />
                 </Head>
                 <SimplePage>
                     <h1>Privacy Policy for www.datacrump.com</h1>

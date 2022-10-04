@@ -8,6 +8,7 @@ export interface Post {
   path: string;
   content: string;
   top: boolean;
+  visible: boolean;
   fullPath: string;
   // fullSlug: {
   //   return this.categorySlug + '/' this.slug

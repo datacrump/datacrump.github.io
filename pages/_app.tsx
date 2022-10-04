@@ -8,6 +8,10 @@ import createEmotionCache from '../config/createEmotionCache';
 import * as React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { red, blue, green } from '@mui/material/colors';
+import Script from 'next/script';
+import CookieConsent, {getCookieConsentValue} from 'react-cookie-consent';
+import Link from 'next/link';
+import next from 'next';
 
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -42,13 +46,46 @@ export default function MyApp(props: MyAppProps) {
     [prefersDarkMode],
   );
 
+  const isConsentIn = getCookieConsentValue('datacrump_policy');
+  const isProduction = (process.env.NODE_ENV == 'production')
+
 
   return (
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
+        {isConsentIn && isProduction ? (
+         <Script id="google-tag-manager" strategy="afterInteractive">
+         {`
+           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+           })(window,document,'script','dataLayer','GTM-PHSCKJB');
+         `}
+       </Script>
+      ) : (
+        <Script></Script>
+      )}
         <Component {...pageProps} />
+        <CookieConsent
+        location="bottom"
+        // enableDeclineButton={true}
+        // buttonText="Sure man!!"
+        cookieName="datacrump_policy"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        expires={150}
+        onAccept={(acceptedByScrolling) => {
+          if (acceptedByScrolling == false) {
+            window.location.reload();
+          }
+        }}
+      >
+        This website uses cookies to enhance the user experience. {" "}
+        <Link href="/privacy-policy">Privacy policy</Link>
+      </CookieConsent>
       </ThemeProvider>
     </CacheProvider>
   );

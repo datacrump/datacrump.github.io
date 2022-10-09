@@ -17,13 +17,13 @@ img {
 
 .postContent a,
 .postContent a:visited {
-    color: #01ff70;
+    color: #2e7d32;
 }
 
 .postContent a:hover,
 .postContent a:focus,
 .postContent a:active {
-    color: #2ecc40;
+    color: #2e7d32;
 }
 
 .postContent .retro-no-decoration {
@@ -31,7 +31,7 @@ img {
 }
 
 .postContent {
-    font-size: 12px;
+    /* font-size: 12px; */
     padding-bottom: 10px;
 }
 
@@ -115,7 +115,7 @@ html {
 
 .postContent {
     /* color: #fafafa; */
-    font-family: "Courier New";
+    /* font-family: "Courier New"; */
     /* line-height: 1.45; */
     /* margin: 6rem auto 1rem;
     max-width: 48rem;
@@ -127,6 +127,6 @@ html {
 }
 
 .postContent blockquote {
-    border-left: 3px solid #01ff70;
+    border-left: 3px solid #2e7d32;
     padding-left: 1rem;
 }

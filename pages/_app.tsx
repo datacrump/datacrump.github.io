@@ -25,7 +25,7 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
+  // #28FE13
   const theme = React.useMemo(
     () =>
       createTheme({
@@ -33,11 +33,15 @@ export default function MyApp(props: MyAppProps) {
           // mode: prefersDarkMode ? 'light' : 'light',
           mode: prefersDarkMode ? 'dark' : 'light',
           primary: {
-            main: blue[900],
+            main: green[800],
+            // main: "#28FE13",
           },
           secondary: {
-             main: green[900],
+             main: blue[900],
           },
+          // background: {
+          //   default: prefersDarkMode ? '#fff' : '#121212',
+          // },
           error: {
           main: red.A400,
          },

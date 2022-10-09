@@ -4,6 +4,7 @@ export interface Post {
   title: string;
   excerpt: string;
   coverImage: string;
+  cardImage: string;
   date: string;
   path: string;
   content: string;

@@ -1,7 +1,6 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button, Grid, Container, Divider, Paper } from "@mui/material"
 import { Post } from "../../interfaces/post"
 
-
 type Props = {
   post: Post
   prev_post: Post
@@ -21,7 +20,7 @@ export default function PostPage({ post, prev_post, next_post }: Props) {
           <Container>
             <img src={post.coverImage} />
             <div>{post.excerpt}</div>
-            <div dangerouslySetInnerHTML={{ __html: post.content }}/>
+            <div className="postContent" dangerouslySetInnerHTML={{ __html: post.content }}/>
           </Container>
           </Paper>  
           </Grid>

@@ -1,7 +1,8 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material"
 import { Post } from "../../interfaces/post"
 import ShareMenu from "../share"
-
+import Image from 'next/image'
+// import profilePic from '../public/me.png'
 
 type Props = {
   post: Post
@@ -13,8 +14,8 @@ export default function PostCard({ post, prev_post }: Props) {
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        height="140"
-        image={post.coverImage}
+        height="181"
+        image={post.cardImage}
         alt={post.title}
       />
       <CardContent>

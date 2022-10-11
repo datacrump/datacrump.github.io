@@ -16,6 +16,7 @@ export default function Index() {
                 <Head>
                     <title>Data Crump</title>
                     <meta name="description" content="Standart policy" />
+                    <meta property="og:image" content="/assets/logo.png" key="og:image"/>
                 </Head>
                 <SimplePage>
                     <h1>Privacy Policy for www.datacrump.com</h1>

@@ -37,7 +37,7 @@ export default function RandomPost({ posts, category }: Props) {
         <Head>
           <title>{`${category.title} | Data Crump`}</title>
           <meta name="description" content={category.excerpt} />
-          {(category.coverImage)?<meta name="og:Image" content={getFullUrl(category.coverImage)} />: <></>}
+          {(category.coverImage)?<meta property="og:image" content={getFullUrl(category.coverImage)} key="og:image"/>: <></>}
         </Head>
         <Container>
         <CategoryCrumbs category={category} />

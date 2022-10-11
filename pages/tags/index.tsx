@@ -29,6 +29,7 @@ export default function RandomPost({ tags }: Props) {
         <Head>
           <title>Tags | Data Crump</title>
           <meta name="description" content="Different tags" />
+          <meta property="og:image" content="/assets/logo.png" key="og:image"/>
         </Head>
         <Container>
 

@@ -44,7 +44,7 @@ export default function RandomPost({ tag, posts }: Props) {
         <Head>
           <title>{`${tag.title} | Data Crump`}</title>
           <meta name="description" content={tag.excerpt} />
-          {(tag.coverImage)?<meta name="og:Image" content={getFullUrl(tag.coverImage)} />: <></>}
+          {(tag.coverImage)?<meta property="og:Image" content={getFullUrl(tag.coverImage)}  key="og:image"/>: <></>}
         </Head>
         <Container>
         <TagCrumbs tag={tag} />

@@ -31,6 +31,7 @@ export default function RandomPost({ categories }: Props) {
         <Head>
           <title>Categories | Data Crump</title>
           <meta name="description" content="Different categories" />
+          <meta property="og:image" content="/assets/logo.png" key="og:image"/>
         </Head>
         <Container>
           

@@ -16,11 +16,9 @@ export default function Document() {
                 <meta name="theme-color" content="#000" />
                 <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
                 <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png" />
-                <meta property="og:image" content="/assets/logo.png" />
                 <meta name="theme-color" content="#000000" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
             </Head>
-
             <body>
                 <Main />
                 <NextScript />

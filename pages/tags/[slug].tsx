@@ -16,6 +16,7 @@ import PostPage from '../../components/post/page'
 import PostCrumbs from '../../components/crumbs/post'
 import PostCard from '../../components/post/card'
 import TagCrumbs from '../../components/crumbs/tag'
+import { getFullUrl } from '../../components/utils'
 
 type Props = {
   tag: Tag
@@ -43,7 +44,7 @@ export default function RandomPost({ tag, posts }: Props) {
         <Head>
           <title>{`${tag.title} | Data Crump`}</title>
           <meta name="description" content={tag.excerpt} />
-          {(tag.coverImage)?<meta name="og:Image" content={tag.coverImage} />: <></>}
+          {(tag.coverImage)?<meta name="og:Image" content={getFullUrl(tag.coverImage)} />: <></>}
         </Head>
         <Container>
         <TagCrumbs tag={tag} />

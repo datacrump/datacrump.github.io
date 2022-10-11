@@ -18,3 +18,6 @@ export function getPostLink(post: Post) {
     return `/tags/${tag.slug}`
   }
   
+  export function getFullUrl(uri: string) {
+    return `https://www.datacrump.com${uri}`
+  }

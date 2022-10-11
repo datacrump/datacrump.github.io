@@ -9,6 +9,7 @@ import { Post, Category } from '../../../interfaces'
 import { Container, Divider, Grid} from '@mui/material'
 import PostCard from '../../../components/post/card'
 import CategoryCrumbs from '../../../components/crumbs/category'
+import { getFullUrl } from '../../../components/utils'
 
 type Props = {
   posts: Post[]
@@ -36,7 +37,7 @@ export default function RandomPost({ posts, category }: Props) {
         <Head>
           <title>{`${category.title} | Data Crump`}</title>
           <meta name="description" content={category.excerpt} />
-          {(category.coverImage)?<meta name="og:Image" content={category.coverImage} />: <></>}
+          {(category.coverImage)?<meta name="og:Image" content={getFullUrl(category.coverImage)} />: <></>}
         </Head>
         <Container>
         <CategoryCrumbs category={category} />

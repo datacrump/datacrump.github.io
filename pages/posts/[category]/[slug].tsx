@@ -15,6 +15,7 @@ import { Box, Breadcrumbs, Container, Divider, Grid, Link, Paper, Typography } f
 import markdownStyles from './markdown-styles.module.css'
 import PostPage from '../../../components/post/page'
 import PostCrumbs from '../../../components/crumbs/post'
+import { getFullUrl } from '../../../components/utils'
 
 type Props = {
   post: Post
@@ -32,7 +33,7 @@ export default function RandomPost({ post, category, posts }: Props) {
       <Head>
           <title>{`${post.title} | Data Crump`}</title>
           <meta name="description" content={post.excerpt} />
-          {(category.coverImage)?<meta name="og:Image" content={post.coverImage} />: <></>}
+          {(category.coverImage)?<meta name="og:Image" content={getFullUrl(post.coverImage)} />: <></>}
         </Head>
       <Container>
         <PostCrumbs post={post} category={category} />

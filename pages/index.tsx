@@ -61,6 +61,8 @@ export default function Index({ latest, top, categories, tags }: Props) {
       <Layout>
         <Head>
           <title>Data Crump</title>
+          <meta name="description" content="Data Crumb - is personal blog about data engineering" />
+          <meta property="og:image" content="/assets/logo.png" key="og:image"/>
         </Head>
         <Container>
           <Paper elevation={3}>

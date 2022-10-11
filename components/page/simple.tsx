@@ -1,5 +1,5 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button, Grid, Container, Divider, Paper } from "@mui/material"
-import { Post } from "../../interfaces/post"
+import { Post } from "../../interfaces"
 
 
 type Props = {

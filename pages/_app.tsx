@@ -33,7 +33,7 @@ export default function MyApp(props: MyAppProps) {
           // mode: prefersDarkMode ? 'light' : 'light',
           mode: prefersDarkMode ? 'dark' : 'light',
           primary: {
-            main: green[800],
+            main: green[800], //#2e7d32
             // main: "#28FE13",
           },
           secondary: {

@@ -1,8 +1,8 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
-import { posts, categories } from '../_posts/posts'
-import { Category, Post } from '../interfaces/post'
+import { posts, categories, tags } from '../_posts/db'
+import { Category, Post, Tag } from '../interfaces'
 
 
 const postsDirectory = join(process.cwd(), '_posts')
@@ -12,8 +12,7 @@ export function getPosts(category: string) : Array<Post> {
 }
 
 export function loadPostContent(post: Post) {
-  const realSlug = post.path
-  const fullPath = join(postsDirectory, `${post.path}`)
+  const fullPath = join(postsDirectory, `${post.contentPath}`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
   post['content'] = content
@@ -21,26 +20,46 @@ export function loadPostContent(post: Post) {
 }
 
 
-export function getAllCategories(): Array<Category> {
+export function getAllCategories(): Category[] {
   return categories
+}
+
+export function getAllTags(): Tag[] {
+  return tags
+}
+
+export function getAllPosts(): Post[] {
+  return posts.filter(post => post.visible == true || process.env.NODE_ENV != 'production').sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
 }
 
 export function getCategory(slug: string): Category {
   return categories.find(category => category.slug == slug)
 }
 
-export function getAllPosts(): Array<Category> {
-  return posts.filter(post => post.visible == true).sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+export function getTag(slug: string): Tag {
+  return tags.find(tag => tag.slug == slug)
 }
 
-export function getCategoryPosts(categorySlug: string) : Array<Post> {
-  return posts.filter(post => post.categorySlug == categorySlug && post.visible == true).sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+export function getCategoryPosts(category: Category) : Array<Post> {
+  return posts.filter(post => post.category.slug == category.slug && post.visible == true).sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
 }
 
-export function getTopPosts() : Array<Post> {
-  return posts.filter(post => post.top == true && post.visible == true).sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+export function getTagPosts(tag: Tag): Post[] {
+  return posts.filter(post => post.visible == true && post.tags.includes(tag)).sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+}
+
+export function getTopCategories(cnt: number) : Category[] {
+  return categories.filter(item => item.top == true).slice(0, cnt)
+}
+
+export function getTopPosts(cnt: number) : Post[] {
+  return posts.filter(post => post.top == true && post.visible == true).sort((post1, post2) => (post1.date > post2.date ? -1 : 1)).slice(0, cnt)
+}
+
+export function getLatestPosts(cnt: number) : Post[] {
+  return posts.filter(post =>  post.visible == true).sort((post1, post2) => (post1.date > post2.date ? -1 : 1)).slice(0, cnt)
 }
 
 export function getPostBySlug(categorySlug: string, slug: string) : Post {
-  return posts.filter(post => post.categorySlug == categorySlug && post.visible == true).map((post) => loadPostContent(post)).find(post => post.slug == slug)
+  return posts.filter(post => post.category.slug == categorySlug && post.visible == true).map((post) => loadPostContent(post)).find(post => post.slug == slug)
 }

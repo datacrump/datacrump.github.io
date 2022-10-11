@@ -9,3 +9,14 @@ yarn build
 yarn export -o logs
 
 ```
+
+
+Page structure:
+
+post_id: category.slug/post.slug
+
+Posts
+- posts/[category]/[slug]
+
+Category
+- post/[category]

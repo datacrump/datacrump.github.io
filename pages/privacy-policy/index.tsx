@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import { Post, Category } from '../../interfaces/post'
+import { Post, Category } from '../../interfaces'
 import Header from '../../components/header'
 import Layout from '../../components/layout'
 import { styled } from '@mui/material/styles';

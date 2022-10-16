@@ -25,6 +25,7 @@ import {
 } from "react-share";
 import { Facebook, Twitter } from "@mui/icons-material";
 import { getPostLink, getPostUrl } from "../utils";
+// import FacebookProvider, { Comments } from 'react-facebook-next';
 
 type Props = {
   post: Post
@@ -63,6 +64,9 @@ export default function PostPage({ post, posts }: Props) {
                   <img src={post.coverImage} />
                   <div>{post.excerpt}</div>
                   <div className="postContent" dangerouslySetInnerHTML={{ __html: post.content }} />
+                  {/* <FacebookProvider appId="434521642057147">
+                    <Comments href={url} />
+                  </FacebookProvider> */}
                 </Container>
               </Paper>
             </Grid>

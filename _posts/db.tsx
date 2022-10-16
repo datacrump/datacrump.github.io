@@ -3,7 +3,7 @@ export const categories = [
         "slug": 'random',
         "title": "Random crump",
         "excerpt": "Place for random topics",
-        "coverImage": "/assets/blog/preview/cover.jpg",
+        "coverImage": "/assets/logo.png",
         "content": "",
         "top": true
     },
@@ -11,7 +11,7 @@ export const categories = [
         "slug": 'aws',
         "title": "AWS crump",
         "excerpt": "Place for topics related to AWS",
-        "coverImage": "/assets/blog/preview/cover.jpg",
+        "coverImage": "/assets/logo.png",
         "content": "",
         "top": true
     }
@@ -22,21 +22,21 @@ export const tags = [
         "slug": 's3',
         "title": "AWS S3",
         "excerpt": "",
-        "coverImage": "",
+        "coverImage": "/assets/logo.png",
         "content": ""
     },
     {
         "slug": 'aws',
         "title": "AWS",
         "excerpt": "",
-        "coverImage": "",
+        "coverImage": "/assets/logo.png",
         "content": ""
     },
     {
         "slug": 'budget',
         "title": "Budget",
         "excerpt": "",
-        "coverImage": "",
+        "coverImage": "/assets/logo.png",
         "content": ""
     }
 ]

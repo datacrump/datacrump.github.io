@@ -14,6 +14,14 @@ export const categories = [
         "coverImage": "/assets/logo.png",
         "content": "",
         "top": true
+    },
+    {
+        "slug": 'basics',
+        "title": "Basics",
+        "excerpt": "Basic stuff which you already know",
+        "coverImage": "/assets/logo.png",
+        "content": "",
+        "top": true
     }
 ]
 
@@ -35,6 +43,13 @@ export const tags = [
     {
         "slug": 'budget',
         "title": "Budget",
+        "excerpt": "",
+        "coverImage": "/assets/logo.png",
+        "content": ""
+    },
+    {
+        "slug": 'storage',
+        "title": "Storage",
         "excerpt": "",
         "coverImage": "/assets/logo.png",
         "content": ""
@@ -84,5 +99,20 @@ export const posts = [
         "top": true,
         "visible": true,
         "tags": tags.filter(tag => ['s3', 'aws', 'budget'].includes(tag.slug))
+    },
+    {
+        "slug": "storage",
+        "category": categories.find(category => category.slug == "basics"),
+        "title": "Object vs block store",
+        "excerpt": "Cheap, scalable, and yet is it really the best storage type for your next big data project",
+        "coverImage": "/assets/basics/storage/storage_cover.png",
+        "cardImage": "/assets/basics/storage/storage_card.png",
+        "date": "2022-10-13T12:36:35.000Z",
+        "contentPath": "/basics/storage.md",
+        "content": "",
+        "top": true,
+        "visible": true,
+        "tags": tags.filter(tag => ['aws', 'storage'].includes(tag.slug))
     }
+
 ]

@@ -138,3 +138,10 @@ html {
     border-left: 3px solid #2e7d32;
     padding-left: 1rem;
 }
+
+.postContent table,
+.postContent th,
+.postContent td {
+    border-collapse: collapse;
+    border: 1px solid #333;
+}

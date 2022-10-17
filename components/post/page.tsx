@@ -53,11 +53,12 @@ export default function PostPage({ post, posts }: Props) {
   const url = getPostUrl(post)
   return (
     <>
-      <Grid container padding={3}>
+      <Grid container paddingBottom={3} paddingTop={3}>
         <Container>
           <h1>{post.title}</h1>
           <Divider />
-          <Grid container spacing={2} padding={3}>
+        
+          <Grid container spacing={2} paddingBottom={3} paddingTop={3}>
             <Grid item xs={12} lg={8}>
               <Paper elevation={3}>
                 <Container>

@@ -113,6 +113,20 @@ export const posts = [
         "top": true,
         "visible": true,
         "tags": tags.filter(tag => ['aws', 'storage'].includes(tag.slug))
+    },
+    {
+        "slug": "file-formats",
+        "category": categories.find(category => category.slug == "basics"),
+        "title": "File formats",
+        "excerpt": "What so special about Apache Parquet, Avro, ORC why can't we just use JSON or CSV for storing our data",
+        "coverImage": "/assets/basics/storage/storage_cover.png",
+        "cardImage": "/assets/basics/storage/storage_card.png",
+        "date": "2022-10-13T12:36:35.000Z",
+        "contentPath": "/basics/storage.md",
+        "content": "",
+        "top": false,
+        "visible": false,
+        "tags": tags.filter(tag => ['aws', 'storage'].includes(tag.slug))
     }
 
 ]

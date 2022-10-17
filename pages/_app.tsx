@@ -50,7 +50,8 @@ export default function MyApp(props: MyAppProps) {
     [prefersDarkMode],
   );
 
-  const isConsentIn = getCookieConsentValue('datacrump_policy');
+  // const isConsentIn = getCookieConsentValue('datacrump_policy');
+  const isConsentIn = true;
   const isProduction = (process.env.NODE_ENV == 'production')
 
 

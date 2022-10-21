@@ -131,7 +131,9 @@ html {
 }
 
 .postContent pre {
-    background-color: #333;
+    /* background-color: #333; */
+    font-size: 0.7em;
+    font-family: sans-serif;
 }
 
 .postContent blockquote {
@@ -139,9 +141,48 @@ html {
     padding-left: 1rem;
 }
 
+.postContent table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.7em;
+    font-family: sans-serif;
+    min-width: 100%;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+}
+
+.postContent thead tr {
+    background-color: #2e7d32;
+    color: #ffffff;
+    text-align: left;
+}
+
+.postContent th,
+.postContent td {
+    padding: 5px 5px;
+}
+
+.postContent tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.postContent tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.postContent tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.postContent tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+/* 
 .postContent table,
 .postContent th,
 .postContent td {
     border-collapse: collapse;
     border: 1px solid #333;
-}
+} */

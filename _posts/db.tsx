@@ -118,15 +118,15 @@ export const posts = [
         "slug": "file-formats",
         "category": categories.find(category => category.slug == "basics"),
         "title": "File formats",
-        "excerpt": "What so special about Apache Parquet, Avro, ORC why can't we just use JSON or CSV for storing our data",
-        "coverImage": "/assets/basics/storage/storage_cover.png",
-        "cardImage": "/assets/basics/storage/storage_card.png",
-        "date": "2022-10-13T12:36:35.000Z",
-        "contentPath": "/basics/storage.md",
+        "excerpt": "I was surpsided by results then comparing Parquet, Avro, JSON and CSV for both storage and speed",
+        "coverImage": "/assets/basics/file-formats/format_cover.png",
+        "cardImage": "/assets/basics/file-formats/format_card.png",
+        "date": "2022-10-20T20:36:35.000Z",
+        "contentPath": "/basics/file-formats.md",
         "content": "",
-        "top": false,
-        "visible": false,
-        "tags": tags.filter(tag => ['aws', 'storage'].includes(tag.slug))
+        "top": true,
+        "visible": true,
+        "tags": tags.filter(tag => ['storage'].includes(tag.slug))
     }
 
 ]

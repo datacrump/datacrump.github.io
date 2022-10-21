@@ -5,7 +5,7 @@ Each file format has its own place in data engineering. You should choose one ba
 
 ## preparing my data
 
-I have pulled my data set from https://data.openaddresses.io/runs/1195253/lt/countrywide.zip
+I have pulled my data set from [here](https://data.openaddresses.io/runs/1195253/lt/countrywide.zip)
 
 For my testing, I'll be using only a couple of columns so I have transformed the original file format to a new one.
 

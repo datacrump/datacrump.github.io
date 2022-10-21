@@ -152,7 +152,7 @@ html {
 
 .postContent thead tr {
     background-color: #2e7d32;
-    color: #ffffff;
+    /* color: #ffffff; */
     text-align: left;
 }
 
@@ -162,20 +162,20 @@ html {
 }
 
 .postContent tbody tr {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #2e7d32;
 }
 
 .postContent tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    /* background-color: #f3f3f3; */
 }
 
 .postContent tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #2e7d32;
 }
 
 .postContent tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    /* color: #009879; */
 }
 
 

@@ -18,6 +18,7 @@ export default function Document() {
                 <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png" />
                 <meta name="theme-color" content="#000000" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"></link>
             </Head>
             <body>
                 <Main />

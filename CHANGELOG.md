@@ -1,5 +1,10 @@
 # Changelog
 
+#### 2022-10-23
+- Added code styling support, improved md reader
+- Started Data Ocean series
+
+
 #### 2022-10-20
 - Added basics/file-formats post
 

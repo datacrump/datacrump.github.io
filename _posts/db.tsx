@@ -22,6 +22,14 @@ export const categories = [
         "coverImage": "/assets/logo.png",
         "content": "",
         "top": true
+    },
+    {
+        "slug": 'data-ocean',
+        "title": "Data Ocean",
+        "excerpt": "In a world of data lakes, data rivers - we need something new let it be data ocean :) ",
+        "coverImage": "/assets/logo.png",
+        "content": "",
+        "top": true
     }
 ]
 
@@ -50,6 +58,13 @@ export const tags = [
     {
         "slug": 'storage',
         "title": "Storage",
+        "excerpt": "",
+        "coverImage": "/assets/logo.png",
+        "content": ""
+    },
+    {
+        "slug": 'data',
+        "title": "Data",
         "excerpt": "",
         "coverImage": "/assets/logo.png",
         "content": ""
@@ -127,6 +142,20 @@ export const posts = [
         "top": true,
         "visible": true,
         "tags": tags.filter(tag => ['storage'].includes(tag.slug))
+    },
+    {
+        "slug": "prologue",
+        "category": categories.find(category => category.slug == "data-ocean"),
+        "title": "Data Ocean: Prologue",
+        "excerpt": "Data platform on Digital Ocean infrastructure. How hard could it be to build it from scratch",
+        "coverImage": "/assets/data-ocean/prologue/cover.png",
+        "cardImage": "/assets/data-ocean/prologue/card.png",
+        "date": "2022-10-22T24:36:35.000Z",
+        "contentPath": "/data-ocean/prologue.md",
+        "content": "",
+        "top": true,
+        "visible": true,
+        "tags": tags.filter(tag => ['data'].includes(tag.slug))
     }
 
 ]

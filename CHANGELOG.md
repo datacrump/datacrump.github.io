@@ -3,6 +3,7 @@
 #### 2022-10-23
 - Added code styling support, improved md reader
 - Started Data Ocean series
+- Adding nofollow for links
 
 
 #### 2022-10-20

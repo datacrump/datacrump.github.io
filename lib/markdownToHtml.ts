@@ -13,5 +13,7 @@ export default async function markdownToHtml(markdown: string) {
     
   const result = await remark().use(remarkParse).use(remarkGfm).use(remarkRehype).use(rehypeHighlight).use(rehypeStringify).process(markdown)
   // const result = await remark().use(html).use(remarkToc).use(remarkGfm).process(markdown)
-  return result.toString()
+  let response = result.toString()
+  response = response.replace('<a ', '<a rel="nofollow" ')
+  return response
 }
